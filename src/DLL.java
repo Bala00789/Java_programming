@@ -13,11 +13,27 @@ public class DLL {
     }
     public void display(){
         Node temp=head;
+        Node last=null;
         while (temp!=null){
+            last=temp;
             System.out.print(temp.value+"->");
             temp=temp.next;
         }
         System.out.println("End of dll");
+    }
+    public void reversedisplay(){
+        Node temp=head;
+        Node last=null;
+        while (temp!=null){
+            last=temp;
+            temp=temp.next;
+        }
+        while (last!=null){
+            System.out.print(last.value+"->");
+            last=last.prev;
+        }
+        System.out.println("end of reverse traversal");
+
     }
     class Node{
         int value;
@@ -42,6 +58,7 @@ public class DLL {
         list.insert_first(2);
         list.insert_first(3);
         list.display();
+        list.reversedisplay();
 
     }
 }
